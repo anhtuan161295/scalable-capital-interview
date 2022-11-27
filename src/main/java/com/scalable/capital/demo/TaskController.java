@@ -54,7 +54,6 @@ public class TaskController {
         if (task == null) {
             return ResponseEntity.noContent().build();
         }
-        TaskDto dto = task.toDto();
         if (!validStatuses.contains(taskDto.getStatus())) {
             return ResponseEntity.badRequest().body("Available statuses are: CREATED, APPROVED, REJECTED, BLOCKED, DONE.");
         }
